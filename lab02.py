@@ -7,23 +7,52 @@
 
 
 def seconds_to_hms(total_seconds):
+    hours = total_seconds // 3600
+    leftover = total_seconds % 3600
+    minutes = leftover // 60
+    seconds = leftover %60
+    return f"{hours}:{minutes:02d}:{seconds:02d}"
+
     # TODO (Part 1): return the time as a string "H:MM:SS"
     #   e.g. seconds_to_hms(3661) should return "1:01:01"
     pass
 
 
 def admission_price(age):
+    if age <5:
+        return 0.0
+    elif age <=12:
+        return 8.00
+    elif age <=64:
+        return 15.00
+    else:
+        return 10.00
+
+
     # TODO (Part 2): return the ticket price (a number) for someone of this age
     pass
 
 
 def sum_multiples(limit):
+    total = 0
+    for n in range(limit):
+        if n % 3 == 0 or n % 5 == 0:
+            total += n
+    return total
+
+
     # TODO (Part 3): return the sum of every whole number below `limit`
     #   that is a multiple of 3 or of 5
     pass
 
 
 def total_of_positives(numbers):
+    total = 0
+    for x in numbers:
+        if x >0:
+            total += x
+    return total
+
     # TODO (Part 4 - STRETCH, optional): return the sum of just the
     #   positive numbers in the list `numbers`
     pass
